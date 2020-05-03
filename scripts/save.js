@@ -6,6 +6,7 @@ if (localStorage.save) {
   for (card in game.cards) {
     addCard("cardList", card)
   }
+  document.getElementById("maxCards").innerText = `Equipped cards (${game.maxEquippedCards} max):`
 } else {
   game = {
     money: 0,

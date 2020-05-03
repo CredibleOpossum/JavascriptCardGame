@@ -20,6 +20,7 @@ function upgrade(upgrade) {
 		game.upgrades[upgrade].cost *= game.upgrades[upgrade].scale;
 		if (upgrade === "cardAmount") {
 			game.maxEquippedCards++;
+			document.getElementById("maxCards").innerText = `Equipped cards (${game.maxEquippedCards} max):`
 		} else if (upgrade === "luck") {
 			game.luck++;
 		}
