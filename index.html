@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Strange Card Game</title>
+    <style>
+      button {
+          outline: black solid 2px;
+          background-color: #aba79d;
+          hover { color: #00FF00; }
+          border: none;
+          padding: 2px 5px;
+          display: inline-block;
+          font-size: 15px;
+        }
+
+        body {
+            padding: 25px;
+            background-color: #95a396;
+            color: black;
+            font-size: 20px;
+        }
+      #cardList, #equippedCards {
+        border: 3px solid black;
+      }
+      div.scroll {
+                margin:4px, 4px;
+                padding:4px;
+                background-color:  #616060;
+                width: 500px;
+                height: 350px;
+                overflow-x: hidden;
+                overflow-x: auto;
+                text-align:justify;
+            }
+      .cardText {
+        position: absolute;
+        right: 150px;
+        float: left;
+        overflow: hidden;
+      }
+      #main {
+  border: 1px solid red;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="cardText">
+      <div>Equipped cards (1 max):</div>
+      <div id="equippedCards" class="scroll"></div><br>
+      <div>Cards:</div>
+      <div id="cardList" class="scroll"></div><br>
+    </div>
+    <div id="money">Money: 0.00 (0.00/s)</div><br>
+    <button type="button" onclick="getCard()" id="getCard">Get card</button><br>
+    <button type="button" onclick="upgrade('cardAmount')" id="cardAmount">Upgrade card amount (100.00$)</button>
+    <button type="button" onclick="upgrade('luck')" id="luck">Upgrade luck (1000.00$)</button>
+  </body>
+</html>
+<script src="scripts/game.js"></script>
+<script src="scripts/cardLogic.js"></script>
+<script src="scripts/randomName.js"></script>
