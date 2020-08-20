@@ -1,5 +1,5 @@
 if (localStorage.save) {
-  game = JSON.parse(localStorage.save)
+  game = JSON.parse(atob(localStorage.save))
   for (card in game.equippedCards) {
     addCard("equippedCards", card)
   }
@@ -33,7 +33,7 @@ if (localStorage.save) {
 }
 
 function save() {
-  localStorage.save = JSON.stringify(game);
+  localStorage.save = btoa(JSON.stringify(game));
 }
 
 setInterval(save, 2000)
